@@ -1,0 +1,22 @@
+JS Arrays:
+    - Represent group of elements as one entity
+    - While duplicates allowed and heterogenous elements allowed
+    - Array elements are string based on indexing
+    - Insertion order maintained
+    - negative indexing is not possible // undefined
+    - Js array is a iterable object
+            - for
+            - While
+            - do{}While
+            - for of
+
+Operations on Array:
+    (1) Read:
+        let eids=[101,102,103,104]
+        console.log(eids) // [101,102,103,104]
+        console.log(eids[0]) // 101
+        console.log(eids[1]) // 102
+        console.log(eids[2]) // 103
+        console.log(eids[5]) // Undefined
+
+    
