@@ -1,14 +1,14 @@
 JS Arrays:
     - Represent group of elements as one entity
     - While duplicates allowed and heterogenous elements allowed
-    - Array elements are string based on indexing
+    - Array elements are storing based on indexing
     - Insertion order maintained
     - negative indexing is not possible // undefined
     - Js array is a iterable object
             - for
             - While
             - do{}While
-            - for of
+            - for( of ){}
 
 Operations on Array:
     (1) Read:
@@ -19,4 +19,49 @@ Operations on Array:
         console.log(eids[2]) // 103
         console.log(eids[5]) // Undefined
 
+What is Js-object:
+    - Group of key:value pairs as one entity
+    - Group of properties as one entity
+    - Duplicate keys are not allowed but duplicate values are allowed
+    - Indexing concept is not allowed
+    - Insertion order not preserved
+    - Js-object is not iterable
+        for( in ){}
+
+Operations on object:
+    (1) Create:
+        let a={};
+        let b={id:101};
+        let emp={
+            eid:101,
+            ename:"Rahul"
+            esal:45000
+        }
+
+    (2) Read:
+        console.log(object.property);
+            console.log(emp.eid);    // 101
+            console.log(emp.ename); // Rahul
+            console.log(emp.esal); // 45000
+            console.log(emp.loc); // Undefined
+
+    (3) Update:
+        emp.email="ejddh@gmail.com";
+
+    (4) Delete:
+        delete emp.sal;
+        console.log(emp);
+
+    Object.keys(emp); - It written all keys in the form of Arrays
     
+    Js-Array
+
+    Array Methods:
+
+    ES 6 New Methods:
+        for each()
+        map()
+        filter()
+        find()
+        reduce()
+        Here we pass function as argument 

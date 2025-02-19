@@ -1,0 +1,21 @@
+<head>
+    <title>Display Object</title>
+</head>
+<body>
+
+    <h2>Object:</h2>
+    <pre id="output"></pre> <!-- Preformatted text for better readability -->
+
+    <script>
+        let user = {    eid:101,
+                            name: "Rahul gandhi", 
+                            age: 52, 
+                            city: "Delhi" 
+                        };
+
+        // Convert object to a string and display it
+        document.getElementById("output").textContent = JSON.stringify(user, null, 2);
+    </script>
+
+</body>
+</html>
