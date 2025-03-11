@@ -1,8 +1,17 @@
+Js-Non Primitive Data Type:
+Object Data Type:
+- In any programming language objects are stored in heap memory area.
+    (1) JS Array[]
+            Group of values/elements as one entity. 
+
+    (2) JS Object{}
+            Group of mapped values like dictionary i.e. word and meaning or key-value pairs or group of properties or group of mapped vales.
+
 JS Arrays:
     - Represent group of elements as one entity
-    - While duplicates allowed and heterogenous elements allowed
+    - While duplicates allowed and heterogenous(dissimilar) elements allowed
     - Array elements are storing based on indexing
-    - Insertion order maintained
+    - Insertion order maintained (Way we add, we get element)
     - negative indexing is not possible // undefined
     - Js array is a iterable object
             - for
@@ -11,21 +20,78 @@ JS Arrays:
             - for( of ){}
 
 Operations on Array:
-    (1) Read:
-        let eids=[101,102,103,104]
-        console.log(eids) // [101,102,103,104]
-        console.log(eids[0]) // 101
-        console.log(eids[1]) // 102
-        console.log(eids[2]) // 103
-        console.log(eids[5]) // Undefined
+    (1) Create:
+        let a=[];
+        let size=['s','M','L','XL'];
+        let b=[10,20.5,10,"Rahul",true,null];
+
+    (2) Read:
+        - Hardcoding:
+            let eids=[101,102,103,104]
+            console.log(eids) // [101,102,103,104]
+            console.log(eids[0]) // 101
+            console.log(eids[1]) // 102
+            console.log(eids[2]) // 103
+            console.log(eids[5]) // Undefined if indexing is not available
+
+        - Using Loops:
+            for(let i=0;i<eids.length;i++){
+                console.log(eids[i]);
+            }
+
+    (3) Update:
+        eids[2]=205;
+
+    (4) Delete:
+    Why doesn’t `delete array;` work?
+        - The delete operator **only works on object properties.
+        - array is a **variable**, not a property of an object.
+        - The `delete` operator **cannot remove variables declared with let, const, or var.
+
+    Correct Ways to Delete an Array
+        If you want to completely remove an array, you can do one of the following:
+            1.  Set it to 'null' (removes reference):
+                    let array = [2, 4, 7, 5, 8];
+                    array = null;
+                    console.log(array); // Output: null
+                
+
+            2.  Set it to an empty array (resets it):   
+                    let array = [2, 4, 7, 5, 8];
+                    array = [];
+                    console.log(array); // Output: []
+            
+
+            3.  Use 'splice()' to remove all elements:
+                    let array = [2, 4, 7, 5, 8];
+                    array.splice(0, array.length);
+                    console.log(array); // Output: []
+                
+
+            4.  Use `length = 0` (empties the array but keeps the reference):
+                    let array = [2, 4, 7, 5, 8];
+                    array.length = 0;
+                    console.log(array); // Output: []
+
+    Deleting Specific Elements
+        If you want to delete a specific element from an array using 'delete', you can do this:
+            let array = [2, 4, 7, 5, 8];
+            delete array[2];
+            console.log(array); // Output: [2, 4, <empty>, 5, 8]
+    
+        However, this leaves an "empty slot" ('undefined' but not removed). Instead, use 'splice()':
+            array.splice(2, 1); // Removes element at index 2
+            console.log(array); // Output: [2, 4, 5, 8]
 
 What is Js-object:
     - Group of key:value pairs as one entity
     - Group of properties as one entity
+            property name:property value
+    - Group of data and functionality as one entity
     - Duplicate keys are not allowed but duplicate values are allowed
     - Indexing concept is not allowed
     - Insertion order not preserved
-    - Js-object is not iterable
+    - Js-object is not iterable by default
         for( in ){}
 
 Operations on object:
@@ -52,6 +118,8 @@ Operations on object:
         delete emp.sal;
         console.log(emp);
 
+        
+
     Object.keys(emp); - It written all keys in the form of Arrays
     
     Js-Array
@@ -65,3 +133,75 @@ Operations on object:
         find()
         reduce()
         Here we pass function as argument 
+
+    DOM: Manipulating doc element
+
+    OOP's:
+    - Class contains properties and methods
+    - Inside a class let, var or function keyword is not allowed
+    - How to access class members(eigther property or methods)
+        (1) inside a class: Using this keyword (This pointer, pointing to current object)
+            this keyword - It is a pointer pointing to current object
+                         - Refer class members inside a class
+
+        (2) outside a class: Using object
+
+    Constructor:
+        - It is a special method to initilize object values
+        - It will invoke only once automatically at the time of object creation
+        - We can't invoke constuctor method explicitly
+
+    ES6 features:
+        - let,const
+        - class
+        - ()=>{}
+        - ${} -> String Lietral
+
+        - [].for each ( ()=>{} ) - Iterate Array and execute given function but not return new Array 
+        - [].map ( ()=>{} )   - Return new array
+        - [].filter ( ()=>{} ) - To filter our source of element
+        - [].reduce ( ()=>{} )
+        - [].find ( ()=>{} ) - In an Array if element present or not
+
+        - Triple dot operator
+            - Spread :
+                        Extract and copy arrays/objects
+                        merge arrays/objects
+                        extend arrays/objects
+
+                What is requirement?
+                    Ex.
+                    let eids=[101,102,103,104];
+                    let vids=eids;
+                    // here vids pointing to same reference(aliasing) as that of (pointing to same object)
+                    // It is not creating new array with different reference
+
+                    vids[0]=100
+                    console.log(vids);
+                    console.log(eids);// You will see change in array
+
+                What are other methods:
+                    - Using loops and push
+                    - Use Map
+
+                Easier method:
+                    Spread
+
+                
+            - rest
+
+        - Destructuring
+            - object
+            - Array
+            
+        - import/export
+
+    String Literal:
+        - We're using string literal to read variable in the form of String
+
+    Array New Method:
+    (1) Map :
+        Returns new Array
+
+    (2) forEach :
+        

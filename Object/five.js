@@ -4,5 +4,9 @@ let employees=[ {eid:101,ename:"RG"},
 ];
 
 for(emp of employees){
-    console.log()
+    console.log(emp)
+}
+
+for(emp2 in employees){
+    console.log(emp2);
 }
